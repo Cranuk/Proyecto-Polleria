@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+:root{
+    /* ===== Colors ===== */
+    --primary-color: #ffffff;
+    --panel-color: #ffffff;
+    --text-color: #0b090a;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #318c2a;
+    --box2-color: #e5383b;
+    --box3-color: #3581B8;
+    --title-icon-color: #ffffff;
+    --background-icon-color: #AA2E30;
+    --background-table-color: #adb5bd;
+    --background-row-table1: #adb5bd;
+    --background-row-table2: #ced4da;
+    
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+} 
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+}
+
+body.dark{
+    --primary-color: #242526;
+    --panel-color: #242526;
+    --text-color: #ffffff;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #FFF;
+    --box1-color: #3A3B3C;
+    --box2-color: #3A3B3C;
+    --box3-color: #3A3B3C;
+    --title-icon-color: #ffffff;
+    --background-table-color: #3A3B3C;
+    --background-row-table1: #3A3B3C;
+    --background-row-table2: #495057;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.space-5{
+    margin-top: 5px;
+}
+
+.space-10{
+    margin-top: 10px;
+}
+
+.d-none{
+    display: none;
+}
+
+.center{
+    text-align: center;
+}
+
+.icon-head{
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.icon-small{
+    font-size: 1.5rem;
+}
+
+.icon-medium{
+    font-size: 2rem;
+}
+
+.icon-big{
+    font-size: 4rem;
+}
+
+.container{
+    width: 100vw;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.underlined{
+    text-decoration: underline;
+}
+
+.button-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons{
+    width: fit-content;
+    padding: 10px;
+    color: #fcfaf9;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+
+.button-red{
+    background-color: #ff5e5b;
+}
+
+.button-red:hover{
+    box-shadow: 0 5px 15px rgba(209, 207, 207, 0.5);
+}
+
+.button-lightBlue{
+    background-color: #3581B8;
+}
+
+.button-lightBlue:hover{
+    box-shadow: 0 5px 15px rgba(209, 207, 207, 0.5);
+}
+
+.button-yellow{
+    background-color: #f4b860;
+}
+
+.button-yellow:hover{
+    box-shadow: 0 5px 15px rgba(209, 207, 207, 0.5);
+}
+
+.button-orange{
+    background-color: #EB5E28;
+}
+
+.button-orange:hover{
+    box-shadow: 0 5px 15px rgba(209, 207, 207, 0.5);
+}
+
+.button-green{
+    background-color: #588157;
+}
+
+.button-green:hover{
+    box-shadow: 0 5px 15px rgba(209, 207, 207, 0.5);
+}
+
+.header-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.alert-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.alert{
+    width: fit-content;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.alert-success{
+    background-color: #588157;
+}
+
+.alert-danger{
+    background-color: #AA2E30;
+}
+
+.alert-notice{
+    background-color: rgba(231, 236, 239, 0.4);
+}
+
+/*ANCHOR: estilos que son en funcion al panel*/
+.section{
+    position: relative;
+    left: 250px;
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    padding: 0px 20px;
+    transition: var(--tran-05);
+}
+
+nav.close ~ .section{
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+.section-content .title{
+    display: flex;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.section-content .title i{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--background-icon-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.section-content .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 10px;
+}

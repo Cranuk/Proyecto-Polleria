@@ -1,0 +1,25 @@
+.footer-page{
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: auto;
+    border-top: var(--border-color) solid 1px;
+}
+
+.footer-box{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon-small{
+    font-size: 1.5rem;
+}
+
+.color-footer{
+    color: #161a1d;
+}
+
+/* ANCHOR: esto es por el modo oscuro que tiene es dashboard */
+body.dark .color-footer{
+    color: #ffffff;
+}
