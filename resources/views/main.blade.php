@@ -50,9 +50,6 @@
                 <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Nueva ventas">
                     <i class='bx bxs-cart-add icon-big'></i>
                 </a>
-                <a href="{{-- route('sales.create') --}}" class="buttons button-orange" title="Filtrar ventas">
-                    <i class='bx bx-filter icon-big'></i>
-                </a>
             </div>
             
             <div class="alert-box">
