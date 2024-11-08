@@ -82,5 +82,8 @@
             </div>
         </div>
     @endif
+    <div class="pagination-box">
+        {{ $sales->links('pagination::bootstrap-4') }}
+    </div>
 </section>
 @endsection

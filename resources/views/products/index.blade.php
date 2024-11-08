@@ -74,5 +74,8 @@
             </div>
         </div>
     @endif
+    <div class="pagination-box">
+        {{ $products->links('pagination::bootstrap-4') }}
+    </div>
 </section>
 @endsection

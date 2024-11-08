@@ -67,5 +67,8 @@
             </div>
         </div>
     @endif
+    <div class="pagination-box">
+        {{ $methodPay->links('pagination::bootstrap-4') }}
+    </div>
 </section>
 @endsection

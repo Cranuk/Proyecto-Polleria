@@ -18,7 +18,7 @@ class PanelController
         $sales = Sale::whereMonth('created_at', Carbon::now()->month)
                 ->whereYear('created_at', Carbon::now()->year)
                 ->orderBy('created_at', 'desc')
-                ->get();
+                ->paginate(10);
         $count = $sales->count();
 
         return view('sales.index',[
@@ -31,7 +31,7 @@ class PanelController
         $supplies = Supplie::whereMonth('created_at', Carbon::now()->month)
                 ->whereYear('created_at', Carbon::now()->year)
                 ->orderBy('price', 'asc')
-                ->get();
+                ->paginate(10);
         $count = $supplies->count();
 
         return view('supplies.index',[
@@ -41,7 +41,8 @@ class PanelController
     }
 
     public function products(){
-        $products = Product::orderBy('price', 'asc')->get();
+        $products = Product::orderBy('price', 'asc')
+                ->paginate(10);
         $count = Product::count();
 
         return view('products.index',[
@@ -51,7 +52,8 @@ class PanelController
     }
 
     public function paymentMethod(){
-        $methodPay = PaymentMethod::orderBy('name', 'asc')->get();
+        $methodPay = PaymentMethod::orderBy('name', 'asc')
+                    ->paginate(10);
         $count = PaymentMethod::count();
 
         return view('paymentMethods.index',[
@@ -61,7 +63,8 @@ class PanelController
     }
 
     public function offers(){
-        $offers = Offer::orderBy('price', 'asc')->get();
+        $offers = Offer::orderBy('price', 'asc')
+                ->paginate(10);
         $count = Offer::count();
 
         return view('offers.index',[

@@ -69,5 +69,8 @@
             </div>
         </div>
     @endif
+    <div class="pagination-box">
+        {{ $supplies->links('pagination::bootstrap-4') }}
+    </div>
 </section>
 @endsection

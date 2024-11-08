@@ -252,3 +252,19 @@ nav.close ~ .section{
     color: var(--text-color);
     margin-left: 10px;
 }
+
+.pagination-box nav{
+    width: 100%;
+    padding: 0px;
+    position: initial;
+    border: none;
+    transition: none;
+    font-size: 2rem;
+}
+
+ul.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
