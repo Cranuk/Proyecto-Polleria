@@ -32,8 +32,8 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo e(\App\Helpers\MyHelpers::formatAmount($expression)); ?>";
         });
 
-        Blade::directive('getBalancePositive', function() {
-            return "<?php echo e(\App\Helpers\MyHelpers::getBalancePositive()); ?>";
+        Blade::directive('getBalancePositive', function($expression) {
+            return "<?php echo e(\App\Helpers\MyHelpers::getBalancePositive($expression)); ?>";
         });
 
         Blade::directive('getBalanceNegative', function() {

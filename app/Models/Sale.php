@@ -13,14 +13,16 @@ class Sale extends Model
     protected $table = 'sales';
 
     // Definir relación con el modelo Product
-    public function product()
-    {
+    public function product(){
         return $this->belongsTo(Product::class, 'product_id');
     }
 
     // Definir relación con el modelo PaymentMethod
-    public function paymentMethod()
-    {
+    public function paymentMethod(){
         return $this->belongsTo(PaymentMethod::class, 'payment_id');
+    }
+
+    public function offer(){
+        return $this->belongsTo(Offer::class);
     }
 }

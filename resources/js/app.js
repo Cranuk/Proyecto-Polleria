@@ -4,3 +4,4 @@ window.$ = window.jQuery = $;
 
 // ANCHOR: mis archivos js
 import './dashboard';
+import './form';

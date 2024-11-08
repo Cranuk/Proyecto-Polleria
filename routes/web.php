@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ProductController;
@@ -15,6 +16,7 @@ Route::get('/', [IndexController::class, 'main'])->name('main');
 Route::get('/sales', [PanelController::class, 'sales'])->name('sales');
 Route::get('/supplies', [PanelController::class, 'supplies'])->name('supplies');
 Route::get('/products', [PanelController::class, 'products'])->name('products');
+Route::get('/offers', [PanelController::class, 'offers'])->name('offers');
 Route::get('/paymentMethod', [PanelController::class, 'paymentMethod'])->name('paymentMethods');
 
 // ANCHOR: rutas para metodos de pago
@@ -44,3 +46,10 @@ Route::get('/sale/edit/{id}', [SaleController::class, 'edit'])->name('sales.edit
 Route::get('/sale/delete/{id}', [SaleController::class, 'delete'])->name('sales.delete');
 Route::post('/sale/save', [SaleController::class, 'save'])->name('sales.save');
 Route::post('/sale/update', [SaleController::class, 'update'])->name('sales.update');
+
+// ANCHOR: rutas para ofertas
+Route::get('/offer/create', [OfferController::class, 'create'])->name('offers.create');
+Route::get('/offer/edit/{id}', [OfferController::class, 'edit'])->name('offers.edit');
+Route::get('/offer/delete/{id}', [OfferController::class, 'delete'])->name('offers.delete');
+Route::post('/offer/save', [OfferController::class, 'save'])->name('offers.save');
+Route::post('/offer/update', [OfferController::class, 'update'])->name('offers.update');

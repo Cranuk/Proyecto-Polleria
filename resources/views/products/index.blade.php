@@ -11,7 +11,7 @@
         </div>
 
         <div class="button-box">
-            <a href="{{ route('products.create') }}" class="buttons button-lightBlue" title="Agregar medio de pago">
+            <a href="{{ route('products.create') }}" class="buttons button-lightBlue" title="Nuevo producto">
                 <i class='bx bx-add-to-queue icon-big'></i>
             </a>
         </div>
@@ -39,8 +39,8 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Descripcion</th>
-                    <th>Cantidad</th>
                     <th>Precio x kg</th>
+                    <th>Cantidad en venta</th>
                     <th>Herramientas</th>
                 </tr>
             </thead>
@@ -52,8 +52,8 @@
                             {{ $product->name }}
                         </td>
                         <td>{{ $product->description }}</td>
-                        <td>@formatAmount($product->amount)</td>
                         <td>@formatCurrency($product->price)</td>
+                        <td>@formatAmount($product->amount)</td>
                         <td>
                             <a href="{{ route('products.edit', ['id'=>$product->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>

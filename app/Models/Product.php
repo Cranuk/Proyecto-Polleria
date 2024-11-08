@@ -13,8 +13,11 @@ class Product extends Model
     protected $table = 'products';
 
     // Definir relación con el modelo Sale
-    public function sales()
-    {
+    public function sales(){
         return $this->hasMany(Sale::class, 'product_id'); // 'product_id' es la clave foránea en la tabla 'sales'
+    }
+
+    public function offers(){
+        return $this->hasMany(Offer::class);
     }
 }

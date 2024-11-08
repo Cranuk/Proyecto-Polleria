@@ -34,11 +34,18 @@ class MyHelpers
     }
 
     // NOTE: funciones para balance
-    public static function getBalancePositive(){
+    public static function getBalancePositive($id=''){
         $month = Carbon::now()->month;
-        $amountPositive = Sale::whereMonth('created_at', '=', $month)
-                        ->sum('price');
-        return self::formatCurrency($amountPositive);
+        if(empty($id)){
+            $amountPositive = Sale::whereMonth('created_at', '=', $month)
+                            ->sum('price');
+            return self::formatCurrency($amountPositive);
+        }else{
+            $amountPositive = Sale::whereMonth('created_at', '=', $month)
+                            ->where('payment_id', '=', $id)
+                            ->sum('price');
+            return self::formatCurrency($amountPositive);
+        }
     }
     
     public static function getBalanceNegative(){

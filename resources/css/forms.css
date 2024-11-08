@@ -5,6 +5,12 @@
     gap: 10px;
 }
 
+.form-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .label-text{
     font-size: 1.4rem;
     color: var(--text-color);
@@ -13,14 +19,15 @@
 .input-text{
     font-size: 1.4rem;
     height: 50px;
-    width: 20%;
+    width: 400px;
     color: #333333;
 }
 
 .input-select{
     font-size: 1.4rem;
     height: 50px;
-    width: 100%;
+    width: 400px;
     color: #333333;
     text-align: center;
 }
+

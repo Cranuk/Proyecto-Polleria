@@ -181,8 +181,8 @@ nav.close ~ .dashboard{
 .dash-content .boxes{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 .dash-content .boxes .box{
     display: flex;

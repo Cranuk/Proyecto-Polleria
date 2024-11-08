@@ -1,17 +1,17 @@
 @extends('layouts.web')
 
-@section('title', 'Metodos de pago')
+@section('title', 'Ofertas')
 
-@section('content-paymentmethod')
+@section('content-offers')
 <section class="section">
     <div class="section-content">
         <div class="title">
             <i class='bx bx-home-circle'></i>
-            <span class="text">Medios de pago:</span>
+            <span class="text">Ofertas vigentes:</span>
         </div>
 
         <div class="button-box">
-            <a href="{{ route('paymentMethods.create') }}" class="buttons button-lightBlue" title="Nuevo medio de pago">
+            <a href="{{ route('offers.create') }}" class="buttons button-lightBlue" title="Nueva oferta">
                 <i class='bx bx-add-to-queue icon-big'></i>
             </a>
         </div>
@@ -37,21 +37,25 @@
         <table>
             <thead>
                 <tr>
-                    <th>Medio de pago</th>
+                    <th>Nombre</th>
                     <th>Descripcion</th>
+                    <th>Precio en oferta</th>
+                    <th>Cantidad en oferta</th>
                     <th>Herramientas</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($methodPay as $data)
+                @foreach($offers as $offer)
                     <tr>
-                        <td>{{ $data->name }}</td>
-                        <td>{{ $data->description }}</td>
+                        <td>{{ $offer->name }}</td>
+                        <td>{{ $offer->description }}</td>
+                        <td>@formatCurrency($offer->price)</td>
+                        <td>@formatAmount($offer->amount_discount)</td>
                         <td>
-                            <a href="{{ route('paymentMethods.edit', ['id'=>$data->id]) }}">
+                            <a href="{{ route('offers.edit', ['id'=>$offer->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>
                             </a>
-                            <a href="{{ route('paymentMethods.delete', ['id'=>$data->id]) }}">
+                            <a href="{{ route('offers.delete', ['id'=>$offer->id]) }}">
                                 <i class='bx bxs-trash-alt'></i>
                             </a>
                         </td>
@@ -63,7 +67,7 @@
         <div class="alert-box">
             <div class="alert alert-notice">
                 <i class='bx bxs-info-square icon-head icon-medium'></i>
-                No hay medios de pagos registrados!!!
+                No hay ofertas agregadas!!!
             </div>
         </div>
     @endif

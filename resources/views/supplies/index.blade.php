@@ -11,7 +11,7 @@
         </div>
 
         <div class="button-box">
-            <a href="{{ route('supplies.create') }}" class="buttons button-lightBlue" title="Agregar nuevo insumo">
+            <a href="{{ route('supplies.create') }}" class="buttons button-lightBlue" title="Nuevo insumo">
                 <i class='bx bx-add-to-queue icon-big'></i>
             </a>
         </div>

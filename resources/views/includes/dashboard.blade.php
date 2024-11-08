@@ -22,15 +22,21 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('supplies') }}" title="Insumos">
-                    <i class='bx bx-shopping-bag'></i>
-                    <span class="link-name">Insumos</span>
+                <a href="{{ route('offers') }}" title="Ofertas">
+                    <i class='bx bxs-offer'></i>
+                    <span class="link-name">Ofertas</span>
                 </a>
             </li>
             <li>
                 <a href="{{ route('products') }}" title="Productos">
                     <i class='bx bx-baguette'></i>
                     <span class="link-name">Productos</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('supplies') }}" title="Insumos">
+                    <i class='bx bx-shopping-bag'></i>
+                    <span class="link-name">Insumos</span>
                 </a>
             </li>
             <li>

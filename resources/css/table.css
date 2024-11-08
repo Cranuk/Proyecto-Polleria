@@ -18,6 +18,7 @@ td i{
 thead tr {
     background-color: var(--background-table-color);
     text-align: center;
+    border-bottom: 2px solid var(--text-color);
 }
 
 tbody tr:nth-child(even) {

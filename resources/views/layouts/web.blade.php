@@ -23,6 +23,7 @@
             @yield('content-supplies')
             @yield('content-products')
             @yield('content-paymentmethod')
+            @yield('content-offers')
         </div>
 
         @include('includes.footer')

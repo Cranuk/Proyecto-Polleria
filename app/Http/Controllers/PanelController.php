@@ -10,6 +10,7 @@ use App\Models\Sale;
 use App\Models\Supplie;
 use App\Models\PaymentMethod;
 use App\Models\Product;
+use App\Models\Offer;
 
 class PanelController
 {
@@ -29,6 +30,7 @@ class PanelController
     public function supplies(){
         $supplies = Supplie::whereMonth('created_at', Carbon::now()->month)
                 ->whereYear('created_at', Carbon::now()->year)
+                ->orderBy('price', 'asc')
                 ->get();
         $count = $supplies->count();
 
@@ -39,7 +41,7 @@ class PanelController
     }
 
     public function products(){
-        $products = Product::all();
+        $products = Product::orderBy('price', 'asc')->get();
         $count = Product::count();
 
         return view('products.index',[
@@ -49,11 +51,21 @@ class PanelController
     }
 
     public function paymentMethod(){
-        $methodPay = PaymentMethod::all();
+        $methodPay = PaymentMethod::orderBy('name', 'asc')->get();
         $count = PaymentMethod::count();
 
         return view('paymentMethods.index',[
             'methodPay' => $methodPay,
+            'count' => $count
+        ]);
+    }
+
+    public function offers(){
+        $offers = Offer::orderBy('price', 'asc')->get();
+        $count = Offer::count();
+
+        return view('offers.index',[
+            'offers' => $offers,
             'count' => $count
         ]);
     }

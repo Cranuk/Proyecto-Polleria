@@ -11,7 +11,7 @@
         </div>
 
         <div class="button-box">
-            <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Agregar medio de pago">
+            <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Nueva venta">
                 <i class='bx bxs-cart-add icon-big'></i>
             </a>
         </div>
@@ -38,7 +38,7 @@
             <thead>
                 <tr>
                     <th>Producto</th>
-                    <th>Precio x kg</th>
+                    <th>Precio unitario / Oferta</th>
                     <th>Cantidad</th>
                     <th>Total</th>
                     <th>Medio de pago</th>
@@ -49,11 +49,18 @@
             <tbody>
                 @foreach($sales as $sale)
                     <tr>
-                        <td>{{ $sale->product->name }}</td><!--NOTE: muestra el producto asociado a la venta-->
-                        <td>{{ $sale->product->price }}</td>
+                        <td>
+                            @isset($sale->offer->name)
+                                <i class='bx bxs-offer' title="Oferta"></i>
+                                {{ $sale->offer->name }}
+                            @else
+                                {{ $sale->product->name }}
+                            @endisset
+                        </td>
+                        <td>@formatCurrency( $sale->product->price ?? $sale->offer->price )</td>
                         <td>@formatAmount($sale->amount)</td>
-                        <td>@formatCurrency($sale->price)</td>
-                        <td>{{ $sale->paymentMethod->name }}</td><!--NOTE: muestra el metodo de pago asociado a la venta-->
+                        <td>@formatCurrency($sale->price ?? $sale->offer->price)</td>
+                        <td>{{ $sale->paymentMethod->name }}</td>
                         <td>@formatDate($sale->created_at)</td>
                         <td>
                             <a href="{{ route('sales.edit', ['id'=>$sale->id]) }}">
