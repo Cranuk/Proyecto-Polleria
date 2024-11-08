@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
+use App\Models\Sale;
 
 class PaymentMethodController 
 {
@@ -56,6 +57,12 @@ class PaymentMethodController
     public function delete($id){
         try {
             $paymentMethod = PaymentMethod::findOrFail($id);
+            $saleCount = Sale::where('payment_id', $id)->count(); // NOTE: Verificar si el método de pago está en algún registro en las ventas
+            
+            if ($saleCount > 0) {
+                return redirect()->route('paymentMethods')
+                                ->with('error', 'No se puede eliminar el método de pago porque está en uso en ' . $saleCount . ' registro(s) de ventas.');
+            }
 
             $paymentMethod->delete();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Offer;
 use App\Models\Product;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class OfferController{
@@ -64,7 +65,12 @@ class OfferController{
     public function delete($id){
         try {
             $offer = Offer::findOrFail($id);
-
+            $saleCount = Sale::where('offer_id', $id)->count(); // NOTE: Verificar si la oferta está en algún registro en las ventas
+            
+            if ($saleCount > 0) {
+                return redirect()->route('offers')
+                                ->with('error', 'No se puede eliminar la oferta porque está en uso en ' . $saleCount . ' registro(s) de ventas.');
+            }
             $offer->delete();
 
             return redirect()->route('offers')

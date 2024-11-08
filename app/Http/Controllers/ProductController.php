@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class ProductController
@@ -62,9 +63,15 @@ class ProductController
     public function delete($id){
         try {
             $product = Product::findOrFail($id);
+            $saleCount = Sale::where('product_id', $id)->count(); // NOTE: Verificar si el producto está en algún registro en las ventas
+            
+            if ($saleCount > 0) {
+                return redirect()->route('products')
+                                ->with('error', 'No se puede eliminar el producto porque está en uso en ' . $saleCount . ' registro(s) de ventas.');
+            }
 
             $product->delete();
-
+            
             return redirect()->route('products')
                             ->with('status', 'Metodo de pago eliminado con éxito.');
         } catch (\Exception $e) {
