@@ -23,6 +23,7 @@ class OfferController{
             $offer->description = $request->input('description');
             $offer->amount_discount = $request->input('amount_discount');
             $offer->price = $request->input('price');
+            $offer->type_unit = $request->input('type_unit');
             
             $offer->save();
     
@@ -51,6 +52,7 @@ class OfferController{
             $offer->description = $request->input('description');
             $offer->amount_discount = $request->input('amount_discount');
             $offer->price = $request->input('price');
+            $offer->type_unit = $request->input('type_unit');
     
             $offer->save();
     

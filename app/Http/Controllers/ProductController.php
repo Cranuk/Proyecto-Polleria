@@ -18,9 +18,10 @@ class ProductController
             $product = new Product();
             $product->name = $request->input('name');
             $product->description = $request->input('description');
-            $product->price = $request->input('price');
             $product->amount = $request->input('amount');
             $product->minimal_amount = $request->input('minimal_amount');
+            $product->price = $request->input('price');
+            $product->type_unit = $request->input('type_unit');
             
             // Guardar el registro en la base de datos
             $product->save();
@@ -46,9 +47,10 @@ class ProductController
     
             $product->name = $request->input('name');
             $product->description = $request->input('description');
-            $product->price = $request->input('price');
             $product->amount = $request->input('amount');
             $product->minimal_amount = $request->input('minimal_amount');
+            $product->price = $request->input('price');
+            $product->type_unit = $request->input('type_unit');
     
             $product->save();
     

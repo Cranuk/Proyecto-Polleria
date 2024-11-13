@@ -6,7 +6,6 @@ use App\Models\Sale;
 use App\Models\Supplie;
 use Carbon\Carbon;
 use NumberFormatter;
-use Illuminate\Support\Facades\DB;
 
 class MyHelpers
 {
@@ -25,8 +24,8 @@ class MyHelpers
         return $formatted;
     }
 
-    // NOTE: funcion para la cantidad en kg
-    public static function formatAmount($amount, $unit='kg'){
+    // NOTE: funcion para la cantidad en la unidad del producto
+    public static function formatAmount($amount, $unit){
         $formatter = new NumberFormatter('es_ES', NumberFormatter::DECIMAL);
         $formatter->setAttribute(NumberFormatter::MIN_FRACTION_DIGITS, 0);
         $formatter->setAttribute(NumberFormatter::MAX_FRACTION_DIGITS, 2);

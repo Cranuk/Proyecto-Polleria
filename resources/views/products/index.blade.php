@@ -39,7 +39,7 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Descripcion</th>
-                    <th>Precio x kg</th>
+                    <th>Precio</th>
                     <th>Cantidad en venta</th>
                     <th>Herramientas</th>
                 </tr>
@@ -53,7 +53,7 @@
                         </td>
                         <td>{{ $product->description }}</td>
                         <td>@formatCurrency($product->price)</td>
-                        <td>@formatAmount($product->amount)</td>
+                        <td>@formatAmount($product->amount, $product->type_unit)</td>
                         <td>
                             <a href="{{ route('products.edit', ['id'=>$product->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>

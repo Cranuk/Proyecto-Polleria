@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Blade::directive('productUnit', function ($expression) {
+            return "<?php echo e(\App\Helpers\MyHelpers::productUnit($expression)); ?>";
+        });
+
         Blade::directive('formatDate', function ($expression) {
             return "<?php echo e(\App\Helpers\MyHelpers::formatDate($expression)); ?>";
         });

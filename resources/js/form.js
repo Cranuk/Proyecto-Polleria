@@ -1,31 +1,29 @@
 window.addEventListener('load', function(){
-    const productSelect = $('#sale-product select');
-    const offerSelect = $('#sale-offer select');
-    const boxProduct = $('#sale-product');
-    const boxOffer = $('#sale-offer');
-    const boxAmount = $('#sale-amount');
+    let saleOptionSelect = $('#sale-option select');
+    let product = $('#sale-product');
+    let offer = $('#sale-offer');
+    let payment = $('#sale-payment');
 
-    function viewProduct(){
-        boxProduct.toggle(!offerSelect.val());
-        productSelect.toggle(!offerSelect.val());
-        boxAmount.toggle(!offerSelect.val());
-    }
+    // NOTE: ocultamos los campos
+    product.hide();
+    offer.hide();
+    payment.hide();
 
-    function viewOffer(){
-        boxOffer.toggle(!productSelect.val());
-        offerSelect.toggle(!productSelect.val());
-    }
+    saleOptionSelect.on("change", function () { 
+        let optionData = saleOptionSelect.val();
 
-    productSelect.on('change', function(){
-        viewProduct();
-        viewOffer();
+        if (optionData == 1) {
+            product.show();
+            payment.show();
+            offer.hide();
+        }else if (optionData == 2) {
+            product.hide();
+            payment.show();
+            offer.show();
+        }else{
+            product.hide();
+            offer.hide();
+            payment.hide();
+        }
     });
-
-    offerSelect.on('change', function(){
-        viewProduct();
-        viewOffer();
-    });
-
-    viewProduct();
-    viewOffer();
 });

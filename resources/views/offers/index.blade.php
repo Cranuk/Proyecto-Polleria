@@ -50,7 +50,7 @@
                         <td>{{ $offer->name }}</td>
                         <td>{{ $offer->description }}</td>
                         <td>@formatCurrency($offer->price)</td>
-                        <td>@formatAmount($offer->amount_discount)</td>
+                        <td>@formatAmount($offer->amount_discount, $offer->type_unit)</td>
                         <td>
                             <a href="{{ route('offers.edit', ['id'=>$offer->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>

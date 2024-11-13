@@ -92,15 +92,12 @@
                                     {{ $sale->product->name }}
                                 @endisset
                             </td>
-                            <td>{{ $sale->product->price ?? 'Precio de oferta' }}</td>
-                            <td>@formatAmount($sale->amount)</td>
+                            <td>{{ $sale->product->price ?? $sale->offer->price }}</td>
+                            <td>@formatAmount($sale->amount, $sale->product->type_unit ?? $sale->offer->type_unit)</td>
                             <td>@formatCurrency($sale->price ?? $sale->offer->price)</td>
                             <td>{{ $sale->paymentMethod->name }}</td><!--NOTE: muestra el metodo de pago asociado a la venta-->
                             <td>@formatDate($sale->created_at)</td>
                             <td>
-                                <a href="{{ route('sales.edit', ['id'=>$sale->id]) }}">
-                                    <i class='bx bxs-edit-alt'></i>
-                                </a>
                                 <a href="{{ route('sales.delete', ['id'=>$sale->id]) }}">
                                     <i class='bx bxs-trash-alt'></i>
                                 </a>
