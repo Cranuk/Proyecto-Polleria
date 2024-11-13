@@ -98,7 +98,7 @@
                             <td>{{ $sale->paymentMethod->name }}</td><!--NOTE: muestra el metodo de pago asociado a la venta-->
                             <td>@formatDate($sale->created_at)</td>
                             <td>
-                                <a href="{{ route('sales.delete', ['id'=>$sale->id]) }}">
+                                <a href="{{ route('sales.delete', ['id'=>$sale->id]) }}" class="delete-button">
                                     <i class='bx bxs-trash-alt'></i>
                                 </a>
                             </td>

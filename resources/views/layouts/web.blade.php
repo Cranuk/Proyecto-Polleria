@@ -26,6 +26,7 @@
             @yield('content-offers')
         </div>
 
+        @include('includes.alerts')
         @include('includes.footer')
     </body>
 </html>

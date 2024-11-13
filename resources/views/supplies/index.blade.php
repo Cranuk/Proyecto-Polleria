@@ -17,20 +17,6 @@
         </div>
     </div>
 
-    <div class="alert-box">
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        @if (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-    </div>
-
     <div class="space-10"></div>
 
     @if($count > 0)
@@ -53,7 +39,7 @@
                             <a href="{{ route('supplies.edit', ['id'=>$supplie->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>
                             </a>
-                            <a href="{{ route('supplies.delete', ['id'=>$supplie->id]) }}">
+                            <a href="{{ route('supplies.delete', ['id'=>$supplie->id]) }}" class="delete-button">
                                 <i class='bx bxs-trash-alt'></i>
                             </a>
                         </td>
