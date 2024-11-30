@@ -4,6 +4,7 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
+    font-size: 16px;
 }
 
 :root{
@@ -33,7 +34,6 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-size: 16px;
     overflow-x: hidden;
     background-color: var(--primary-color);
 }
@@ -54,28 +54,22 @@ body.dark{
     --background-row-table2: #495057;
 }
 
+main {
+    flex: 1;
+    margin-left: 250px;
+    transition: var(--tran-05);
+}
+
+main.main-close{
+    margin-left: 70px;
+}
+
 a{
     text-decoration: none;
 }
 
 ul{
     list-style: none;
-}
-
-.space-5{
-    margin-top: 5px;
-}
-
-.space-10{
-    margin-top: 10px;
-}
-
-.d-none{
-    display: none;
-}
-
-.center{
-    text-align: center;
 }
 
 .icon-head{
@@ -93,15 +87,12 @@ ul{
 }
 
 .icon-big{
-    font-size: 4rem;
-}
-
-.container{
-    width: 100vw;
+    font-size: 3rem;
 }
 
 .title{
     font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .subtitle{
@@ -118,6 +109,7 @@ ul{
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 10px;
 }
 
 .buttons{
@@ -186,51 +178,17 @@ ul{
     gap: 16px;
 }
 
-.alert-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.alert{
-    width: fit-content;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.alert-success{
-    background-color: #588157;
-}
-
-.alert-danger{
-    background-color: #AA2E30;
-}
-
-.alert-notice{
-    background-color: rgba(231, 236, 239, 0.4);
-}
-
 /*ANCHOR: estilos que son en funcion al panel*/
 .section{
     position: relative;
-    left: 250px;
-    min-height: 100vh;
-    width: calc(100% - 250px);
     padding: 0px 20px;
     transition: var(--tran-05);
-}
-
-nav.close ~ .section{
-    left: 73px;
-    width: calc(100% - 73px);
 }
 
 .section-content .title{
     display: flex;
     align-items: center;
-    margin: 30px 0px;
+    margin: 10px 0px;
 }
 
 .section-content .title i{

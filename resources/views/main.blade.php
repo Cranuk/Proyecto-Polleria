@@ -5,68 +5,44 @@
 @section('content-dashboard')
 <section class="dashboard">
     <div class="dash-content">
-        <div class="overview">
-            <div class="title">
-                <i class='bx bx-home-circle'></i>
-                <span class="text">Dashboard</span>
-            </div>
+        <div class="title">
+            <i class='bx bx-home-circle'></i>
+            <span class="text">Dashboard</span>
+        </div>
 
-            <div class="boxes">
-                @foreach($payMethod as $data)
-                    <div class="box box1">
-                        <i class='bx bx-money'></i>
-                        <span class="text">Total de ventas en {{$data->name}}</span>
-                        <span class="number">@getBalancePositive($data->id)</span>
-                    </div>
-                @endforeach
+        <div class="boxes">
+            @foreach($payMethod as $data)
                 <div class="box box1">
                     <i class='bx bx-money'></i>
-                    <span class="text">Total en ventas</span>
-                    <span class="number">@getBalancePositive()</span>
+                    <p class="text">Total en {{$data->name}}</p>
+                    <p class="number">@getBalancePositive($data->id)</p>
                 </div>
+            @endforeach
+            <div class="box box1">
+                <i class='bx bx-money'></i>
+                <p class="text">Total en ventas</p>
+                <p class="number">@getBalancePositive()</p>
             </div>
-            <div class="space-10"></div>
-            <div class="boxes">
-                <div class="box box2">
-                    <i class='bx bx-shopping-bag'></i>
-                    <span class="text">Total en insumos</span>
-                    <span class="number">@getBalanceNegative()</span>
-                </div>
-                <div class="box box3">
-                    <i class='bx bx-line-chart'></i>
-                    <span class="text">Balance general</span>
-                    <span class="number">@getBalance()</span>
-                </div>
+        </div>
+
+        <div class="boxes">
+            <div class="box box2">
+                <i class='bx bx-shopping-bag'></i>
+                <p class="text">Total en insumos</p>
+                <p class="number">@getBalanceNegative()</p>
+            </div>
+            <div class="box box3">
+                <i class='bx bx-line-chart'></i>
+                <p class="text">Balance general</p>
+                <p class="number">@getBalance()</p>
             </div>
         </div>
 
         <div class="activity">
             <div class="title">
                 <i class='bx bx-book-content'></i>
-                <span class="text">Ultimas ventas</span>
+                <p class="text">Ultimas ventas</p>
             </div>
-
-            <div class="button-box">
-                <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Nueva ventas">
-                    <i class='bx bxs-cart-add icon-big'></i>
-                </a>
-            </div>
-            
-            <div class="alert-box">
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-        
-                @if (session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-            </div>
-        
-            <div class="space-10"></div>
         
         @if($count > 0)
             <table>

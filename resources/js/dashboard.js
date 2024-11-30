@@ -3,6 +3,7 @@ window.addEventListener('load', function(){
     const modeToggle = $(".mode-toggle");
     const sidebar = $("nav");
     const sidebarToggle = $(".sidebar-toggle");
+    const main = $("main")
 
     // Verificar y aplicar el modo guardado
     const getMode = localStorage.getItem("mode");
@@ -14,6 +15,7 @@ window.addEventListener('load', function(){
     const getStatus = localStorage.getItem("status");
     if (getStatus && getStatus === "close") {
         sidebar.toggleClass("close");
+        main.addClass("main-close");
     }
 
     // Manejar el cambio de modo
@@ -30,9 +32,13 @@ window.addEventListener('load', function(){
     sidebarToggle.on("click", function() {
         sidebar.toggleClass("close");
         if (sidebar.hasClass("close")) {
+            main.addClass("main-close");
             localStorage.setItem("status", "close");
         } else {
+            main.removeClass("main-close");
             localStorage.setItem("status", "open");
         }
     });
+
+
 });

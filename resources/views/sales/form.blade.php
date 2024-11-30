@@ -43,6 +43,11 @@
         </select>
     </div>
 
+    <div id="sale-date" class="form-block">
+        <label for="date" class="label-text">Fecha:</label>
+        <input type="date" name="date" id="date" class="input-text">
+    </div>
+
     <div class="button-box">
         <a href="{{ route('sales') }}" class="buttons button-orange" title="Volver">
             <i class='bx bx-arrow-back icon-small'></i>

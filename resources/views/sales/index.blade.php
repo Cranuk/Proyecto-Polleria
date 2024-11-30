@@ -19,7 +19,7 @@
 
     <div class="space-10"></div>
 
-    @if($count > 0) <!-- crear el count para poder configurar la tabla mas adelante $count > 0-->
+    @if($count > 0)
         <table>
             <thead>
                 <tr>

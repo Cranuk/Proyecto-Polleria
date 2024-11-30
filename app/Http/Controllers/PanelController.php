@@ -30,7 +30,7 @@ class PanelController
     public function supplies(){
         $supplies = Supplie::whereMonth('created_at', Carbon::now()->month)
                 ->whereYear('created_at', Carbon::now()->year)
-                ->orderBy('price', 'asc')
+                ->orderBy('created_at', 'desc')
                 ->paginate(10);
         $count = $supplies->count();
 
@@ -41,7 +41,7 @@ class PanelController
     }
 
     public function products(){
-        $products = Product::orderBy('price', 'asc')
+        $products = Product::orderBy('created_at', 'desc')
                 ->paginate(10);
         $count = Product::count();
 
@@ -52,7 +52,7 @@ class PanelController
     }
 
     public function paymentMethod(){
-        $methodPay = PaymentMethod::orderBy('name', 'asc')
+        $methodPay = PaymentMethod::orderBy('created_at', 'desc')
                     ->paginate(10);
         $count = PaymentMethod::count();
 
@@ -63,7 +63,7 @@ class PanelController
     }
 
     public function offers(){
-        $offers = Offer::orderBy('price', 'asc')
+        $offers = Offer::orderBy('created_at', 'desc')
                 ->paginate(10);
         $count = Offer::count();
 

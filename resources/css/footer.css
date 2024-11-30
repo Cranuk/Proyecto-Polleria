@@ -1,25 +1,58 @@
-.footer-page{
-    text-align: center;
-    padding: 0.5rem;
-    margin-top: auto;
-    border-top: var(--border-color) solid 1px;
+:root{
+    --color-text:#f9f7f3;
+    --background-footer: #333333;
+    --color-link: #ffb200;
 }
 
-.footer-box{
-    display: inline-flex;
+footer{
+    width: 100%;
+}
+
+.container-footer{
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+    color: var(--color-text);
+    background-color: var(--background-footer);
 }
 
-.icon-small{
-    font-size: 1.5rem;
+.footer-contact,
+.footer-copyright{
+    display: flex;
+    gap: 10px;
 }
 
-.color-footer{
-    color: #161a1d;
+.footer-contact  .icon-big{
+    font-size: 2rem;
+    color: var(--color-link);
 }
 
-/* ANCHOR: esto es por el modo oscuro que tiene es dashboard */
-body.dark .color-footer{
-    color: #ffffff;
+.footer-copyright p  a{
+    color: var(--color-link);
+}
+
+/*******************************/
+/*********MEDIAQUERIES*********/
+/*****************************/
+@media (max-width: 820px) {
+    .container-footer > .footer-copyright {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-no-display{
+        display: none;
+    }
+
+    *{
+        font-size: 14px
+    }
+}
+
+@media (max-width: 420px) {
+    *{
+        font-size: 12px
+    }
 }

@@ -3,5 +3,6 @@
 @import './dashboard.css';
 @import './footer.css';
 @import './menu.css';
-@import './table.css';
+@import './tables.css';
 @import './forms.css';
+@import './mediaqueries.css';

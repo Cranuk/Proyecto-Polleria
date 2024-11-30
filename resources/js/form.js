@@ -1,4 +1,5 @@
 window.addEventListener('load', function(){
+    
     let saleOptionSelect = $('#sale-option select');
     let product = $('#sale-product');
     let offer = $('#sale-offer');

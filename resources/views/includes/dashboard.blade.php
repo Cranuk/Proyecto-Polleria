@@ -1,10 +1,10 @@
 <nav>
-    <div class="logo-name">
-        <div class="logo-image sidebar-toggle">
-            <img src="{{ asset('Proyectos.png')}}" alt="logo">
+    <div class="logo-box sidebar-toggle">
+        <div class="logo-image">
+            <img src="{{ asset('Tienda.png')}}" alt="logo">
         </div>
 
-        <span class="logo_name">Polleria</span>
+        <span class="logo-name">Store</span>
     </div>
 
     <div class="menu-items">
@@ -12,7 +12,7 @@
             <li>
                 <a href="/" title="Dashboard">
                     <i class='bx bx-medal'></i>
-                    <span class="link-name">Dashboard</span>
+                    <span class="link-name">Tablero</span>
                 </a>
             </li>
             <li>

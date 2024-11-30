@@ -9,3 +9,4 @@ window.Swal = Swal;
 // ANCHOR: mis archivos js
 import './dashboard';
 import './form';
+import './script';
