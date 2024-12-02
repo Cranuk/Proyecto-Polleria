@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($methodPay as $data)
+                @foreach($tables as $data)
                     <tr>
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->description }}</td>
@@ -54,7 +54,7 @@
         </div>
     @endif
     <div class="pagination-box">
-        {{ $methodPay->links('pagination::bootstrap-4') }}
+        {{ $tables->links('pagination::bootstrap-4') }}
     </div>
 </section>
 @endsection

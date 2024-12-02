@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($supplies as $supplie)
+                @foreach($tables as $supplie)
                     <tr>
                         <td>{{ $supplie->name }}</td>
                         <td>@formatCurrency($supplie->price)</td>
@@ -56,7 +56,7 @@
         </div>
     @endif
     <div class="pagination-box">
-        {{ $supplies->links('pagination::bootstrap-4') }}
+        {{ $tables->links('pagination::bootstrap-4') }}
     </div>
 </section>
 @endsection

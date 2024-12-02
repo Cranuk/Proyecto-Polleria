@@ -16,13 +16,7 @@
     color: var(--text-color);
 }
 
-.input-text{
-    font-size: 1.4rem;
-    height: 50px;
-    width: 400px;
-    color: #333333;
-}
-
+.input-text,
 .input-select{
     font-size: 1.4rem;
     height: 50px;
@@ -30,4 +24,5 @@
     color: #333333;
     text-align: center;
 }
+
 

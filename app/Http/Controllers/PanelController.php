@@ -22,7 +22,7 @@ class PanelController
         $count = $sales->count();
 
         return view('sales.index',[
-            'sales' => $sales,
+            'tables' => $sales,
             'count' => $count
         ]);
     }
@@ -35,7 +35,7 @@ class PanelController
         $count = $supplies->count();
 
         return view('supplies.index',[
-            'supplies' => $supplies,
+            'tables' => $supplies,
             'count' => $count
         ]);
     }
@@ -46,7 +46,7 @@ class PanelController
         $count = Product::count();
 
         return view('products.index',[
-            'products' => $products,
+            'tables' => $products,
             'count' => $count
         ]);
     }
@@ -57,7 +57,7 @@ class PanelController
         $count = PaymentMethod::count();
 
         return view('paymentMethods.index',[
-            'methodPay' => $methodPay,
+            'tables' => $methodPay,
             'count' => $count
         ]);
     }
@@ -68,7 +68,7 @@ class PanelController
         $count = Offer::count();
 
         return view('offers.index',[
-            'offers' => $offers,
+            'tables' => $offers,
             'count' => $count
         ]);
     }

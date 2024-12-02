@@ -14,6 +14,9 @@
             <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Nueva venta">
                 <i class='bx bxs-cart-add icon-big'></i>
             </a>
+            <a id="filter-button" class="buttons button-yellow" title='Filtro' data-table="sales">
+                <i class='bx bx-filter icon-big'></i>
+            </a>
         </div>
     </div>
 
@@ -33,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($sales as $sale)
+                @foreach($tables as $sale)
                     <tr>
                         <td>
                             @isset($sale->offer->name)
@@ -43,7 +46,7 @@
                                 {{ $sale->product->name }}
                             @endisset
                         </td>
-                        <td>@formatCurrency( $sale->product->price ?? $sale->offer->price )</td>
+                        <td>@formatCurrency( $sale->product_price ?? $sale->offer->price )</td>
                         <td>@formatAmount($sale->amount, $sale->product->type_unit ?? $sale->offer->type_unit)</td>
                         <td>@formatCurrency($sale->price ?? $sale->offer->price)</td>
                         <td>{{ $sale->paymentMethod->name }}</td>
@@ -66,7 +69,7 @@
         </div>
     @endif
     <div class="pagination-box">
-        {{ $sales->links('pagination::bootstrap-4') }}
+        {{ $tables->links('pagination::bootstrap-4') }}
     </div>
 </section>
 @endsection

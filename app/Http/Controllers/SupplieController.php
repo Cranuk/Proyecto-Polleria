@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Supplie;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SupplieController
@@ -13,9 +14,14 @@ class SupplieController
 
     public function save(Request $request){
         try {
+            $data = $request->input('date');
+            $date = $data ? Carbon::createFromFormat('d/m/Y', $data)->startOfDay(): Carbon::now();
+
             $supplie = new Supplie();
             $supplie->name = $request->input('name');
             $supplie->price = $request->input('price');
+            $supplie->created_at = $date;
+            $supplie->updated_at = $date;
             
             $supplie->save();
     
@@ -29,17 +35,23 @@ class SupplieController
 
     public function edit($id){
         $supplie = Supplie::findOrFail($id);
+        $dateFormat = Carbon::parse($supplie->updated_at)->format('d/m/Y');
         return view('supplies.create', [
-            'edit' => $supplie
+            'edit' => $supplie,
+            'dateFormat' => $dateFormat
         ]);
     }
 
     public function update(Request $request){
         try {
             $supplie = Supplie::findOrFail($request->input('id'));
+
+            $data = $request->input('date');
+            $date = $data ? Carbon::createFromFormat('d/m/Y', $data)->startOfDay(): Carbon::now();
     
             $supplie->name = $request->input('name');
             $supplie->price = $request->input('price');
+            $supplie->updated_at = $date;
     
             $supplie->save();
     

@@ -31,6 +31,9 @@
         <label for="price" class="label-text">Precio:</label>
         <input type="number" name="price" class="input-text" value="{{ $edit->price ?? '' }}" required min="0" step="0.01" placeholder="Ejemplo: 2.50">
 
+        <label for="date" class="label-text">Fecha:</label>
+        <input type="text" name="date" class="input-text datePicker" value="{{ $dateFormat ?? '' }}" placeholder="Selecciona una fecha">
+
         <div class="button-box">
             <a href="{{ route('supplies') }}" class="buttons button-orange" title="Volver">
                 <i class='bx bx-arrow-back icon-small'></i>

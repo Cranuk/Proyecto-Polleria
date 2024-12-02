@@ -72,6 +72,14 @@ ul{
     list-style: none;
 }
 
+.d-none{
+    display: none;
+}
+
+.space-10{
+    margin-top: 10px;
+}
+
 .icon-head{
     display: block;
     text-align: center;
@@ -102,6 +110,28 @@ ul{
 
 .underlined{
     text-decoration: underline;
+}
+
+.center{
+    text-align: center;
+}
+
+.alert-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.alert{
+    width: fit-content;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.alert-notice{
+    background-color: rgba(231, 236, 239, 0.4);
 }
 
 .button-box{

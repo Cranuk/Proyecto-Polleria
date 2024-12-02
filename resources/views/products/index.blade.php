@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($products as $product)
+                @foreach($tables as $product)
                     <tr>
                         <td>
                             <i class='bx bx-info-circle d-none {{ $product->amount <= $product->minimal_amount ? 'alert-amount' : '' }}' title="Aviso de poco stock"></i>
@@ -61,7 +61,7 @@
         </div>
     @endif
     <div class="pagination-box">
-        {{ $products->links('pagination::bootstrap-4') }}
+        {{ $tables->links('pagination::bootstrap-4') }}
     </div>
 </section>
 @endsection

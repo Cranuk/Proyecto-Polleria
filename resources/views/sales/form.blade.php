@@ -45,7 +45,7 @@
 
     <div id="sale-date" class="form-block">
         <label for="date" class="label-text">Fecha:</label>
-        <input type="date" name="date" id="date" class="input-text">
+        <input type="text" name="date" class="input-text datePicker" value="{{ $dateFormat ?? '' }}" placeholder="Selecciona una fecha">
     </div>
 
     <div class="button-box">

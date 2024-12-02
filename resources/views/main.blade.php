@@ -49,12 +49,11 @@
                 <thead>
                     <tr>
                         <th>Producto</th>
-                        <th>Precio x kg</th>
                         <th>Cantidad</th>
+                        <th>Precio del producto</th>
                         <th>Total</th>
                         <th>Medio de pago</th>
                         <th>Fecha</th>
-                        <th>Herramientas</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,16 +67,11 @@
                                     {{ $sale->product->name }}
                                 @endisset
                             </td>
-                            <td>{{ $sale->product->price ?? $sale->offer->price }}</td>
                             <td>@formatAmount($sale->amount, $sale->product->type_unit ?? $sale->offer->type_unit)</td>
+                            <td>@formatCurrency($sale->product_price ?? $sale->offer->price)</td>
                             <td>@formatCurrency($sale->price ?? $sale->offer->price)</td>
                             <td>{{ $sale->paymentMethod->name }}</td><!--NOTE: muestra el metodo de pago asociado a la venta-->
                             <td>@formatDate($sale->created_at)</td>
-                            <td>
-                                <a href="{{ route('sales.delete', ['id'=>$sale->id]) }}" class="delete-button">
-                                    <i class='bx bxs-trash-alt'></i>
-                                </a>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -6,6 +6,7 @@ use App\Models\Offer;
 use App\Models\PaymentMethod;
 use App\Models\Product;
 use App\Models\Sale;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SaleController
@@ -38,14 +39,18 @@ class SaleController
         return $total;
     }
 
-    private function productSale($productId, $amount, $paymentId){
+    private function productSale($productId, $amount, $paymentId, $date){
+        $product = Product::findOrFail($productId);
         if (self::removeAmountProduct($productId, $amount)) {
             $sale = new Sale();
             $sale->product_id = $productId;
             $sale->offer_id = 0;
             $sale->payment_id = $paymentId;
             $sale->amount = $amount;
+            $sale->product_price = $product->price;
             $sale->price = self::calculatePriceSale($productId, $amount);
+            $sale->created_at = $date;
+            $sale->updated_at = $date;
 
             $sale->save();
             return true;
@@ -54,7 +59,7 @@ class SaleController
         }
     }
 
-    private function offerSale($offerId, $paymentId){
+    private function offerSale($offerId, $paymentId, $date){
         $offerProduct = Offer::findOrFail($offerId);
         if (self::removeAmountProduct($offerProduct->product_id, $offerProduct->amount_discount)) {
             $sale = new Sale();
@@ -62,7 +67,10 @@ class SaleController
             $sale->offer_id = $offerId;
             $sale->payment_id = $paymentId;
             $sale->amount = $offerProduct->amount_discount;
+            $sale->product_price = $offerProduct->price;
             $sale->price = $offerProduct->price;
+            $sale->created_at = $date;
+            $sale->updated_at = $date;
 
             $sale->save();
             return true;
@@ -86,13 +94,16 @@ class SaleController
 
     public function save(Request $request){
         try {
+            $data = $request->input('date');
+            $date = $data ? Carbon::createFromFormat('d/m/Y', $data)->startOfDay(): Carbon::now();
+            
             $productId = $request->input('product_id') ?: 0;
             $offerId = $request->input('offer_id') ?: 0;
             $amount = $request->input('amount');
             $paymentId = $request->input('payment_id');
 
             if ($productId != 0) {
-                if (self::productSale($productId, $amount, $paymentId)) {
+                if (self::productSale($productId, $amount, $paymentId, $date)) {
                     return redirect()->route('sales')
                         ->with('status', 'Operación realizada con éxito.');
                 } else {
@@ -102,7 +113,7 @@ class SaleController
             }
 
             if ($offerId != 0) {
-                if (self::offerSale($offerId, $paymentId)) {
+                if (self::offerSale($offerId, $paymentId, $date)) {
                     return redirect()->route('sales')
                         ->with('status', 'Operación realizada con éxito.');
                 } else {

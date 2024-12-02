@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PanelController;
@@ -53,3 +54,7 @@ Route::get('/offer/edit/{id}', [OfferController::class, 'edit'])->name('offers.e
 Route::get('/offer/delete/{id}', [OfferController::class, 'delete'])->name('offers.delete');
 Route::post('/offer/save', [OfferController::class, 'save'])->name('offers.save');
 Route::post('/offer/update', [OfferController::class, 'update'])->name('offers.update');
+
+// NOTE: Rutas para filtros
+Route::get('/filters/date',[FilterController::class, 'date'])->name('obtainDate');
+Route::post('/filters/table',[FilterController::class, 'filter'])->name('filterDate');

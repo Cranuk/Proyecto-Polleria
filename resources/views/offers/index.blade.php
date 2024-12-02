@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($offers as $offer)
+                @foreach($tables as $offer)
                     <tr>
                         <td>{{ $offer->name }}</td>
                         <td>{{ $offer->description }}</td>
@@ -58,7 +58,7 @@
         </div>
     @endif
     <div class="pagination-box">
-        {{ $offers->links('pagination::bootstrap-4') }}
+        {{ $tables->links('pagination::bootstrap-4') }}
     </div>
 </section>
 @endsection
