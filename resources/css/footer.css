@@ -4,10 +4,6 @@
     --color-link: #ffb200;
 }
 
-footer{
-    width: 100%;
-}
-
 .container-footer{
     display: flex;
     flex-direction: column;
