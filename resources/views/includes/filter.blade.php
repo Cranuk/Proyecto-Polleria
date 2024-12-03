@@ -4,7 +4,7 @@
             @csrf
             <input type="hidden" id="table" name="table">
             <label for="date" class="label-text">Fecha:</label>
-            <input type="text" name="date" class="input-text datePicker" placeholder="Selecciona una fecha">
+            <input type="text" name="date" class="input-text dateFilter" placeholder="Selecciona una fecha">
 
             <div class="space-10"></div>
 

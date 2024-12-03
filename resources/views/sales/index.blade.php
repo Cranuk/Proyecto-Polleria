@@ -12,10 +12,13 @@
 
         <div class="button-box">
             <a href="{{ route('sales.create')}}" class="buttons button-lightBlue" title="Nueva venta">
-                <i class='bx bxs-cart-add icon-big'></i>
+                <i class='bx bx-add-to-queue icon-big'></i>
             </a>
             <a id="filter-button" class="buttons button-yellow" title='Filtro' data-table="sales">
                 <i class='bx bx-filter icon-big'></i>
+            </a>            
+            <a id="report-button" class="buttons button-red" title='Generar reporte' data-table="sales">
+                <i class='bx bxs-file-pdf icon-big'></i>
             </a>
         </div>
     </div>

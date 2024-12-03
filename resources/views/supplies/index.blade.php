@@ -14,6 +14,9 @@
             <a href="{{ route('supplies.create') }}" class="buttons button-lightBlue" title="Nuevo insumo">
                 <i class='bx bx-add-to-queue icon-big'></i>
             </a>
+            <a id="filter-button" class="buttons button-yellow" title='Filtro' data-table="supplies">
+                <i class='bx bx-filter icon-big'></i>
+            </a>
         </div>
     </div>
 

@@ -31,11 +31,4 @@ window.addEventListener('load', function(){
             date.hide();
         }
     });
-
-    flatpickr(".datePicker", {
-        dateFormat: "d/m/Y",
-        maxDate: "today",
-        locale: "es",
-    });
-    
 });

@@ -6,6 +6,7 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SupplieController;
 use Illuminate\Support\Facades\Route;
@@ -56,5 +57,7 @@ Route::post('/offer/save', [OfferController::class, 'save'])->name('offers.save'
 Route::post('/offer/update', [OfferController::class, 'update'])->name('offers.update');
 
 // NOTE: Rutas para filtros
-Route::get('/filters/date',[FilterController::class, 'date'])->name('obtainDate');
-Route::post('/filters/table',[FilterController::class, 'filter'])->name('filterDate');
+Route::post('/filter/table',[FilterController::class, 'filter'])->name('filterDate');
+
+// NOTE: Rutas para reportes
+Route::post('/report/pdf', [ReportController::class, 'report'])->name('reportPdf');
