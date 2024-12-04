@@ -2,12 +2,12 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    height: 80%;
-    min-height: 89vh;
+    min-height: 100vh;
     width: 250px;
     padding: 10px 14px;
-    background-color: var(--panel-color);
+    background-color: var(--background-general);
     border-right: 1px solid var(--border-color);
+    overflow-y: auto;
     transition: var(--tran-05);
 }
 
@@ -81,35 +81,42 @@ body.dark li a:hover:before{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black-light-color);
+    color: var(--icon-color-panel);
 }
+
 .menu-items li a .link-name{
     font-size: 18px;
     font-weight: 400;
-    color: var(--black-light-color);
+    color: var(--text-color-icon);
     transition: var(--tran-05);
 }
+
 nav.close li a .link-name{
     opacity: 0;
     pointer-events: none;
 }
+
 .nav-links li a:hover i,
 .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
+
 body.dark .nav-links li a:hover i,
 body.dark .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
+
 .menu-items .logout-mode{
     padding-top: 10px;
     border-top: 1px solid var(--border-color);
 }
+
 .menu-items .mode{
     display: flex;
     align-items: center;
     white-space: nowrap;
 }
+
 .menu-items .mode-toggle{
     position: absolute;
     right: 14px;
@@ -120,6 +127,7 @@ body.dark .nav-links li a:hover .link-name{
     justify-content: center;
     cursor: pointer;
 }
+
 .mode-toggle .switch{
     position: relative;
     display: inline-block;
@@ -128,6 +136,7 @@ body.dark .nav-links li a:hover .link-name{
     border-radius: 25px;
     background-color: var(--toggle-color);
 }
+
 .switch:before{
     content: "";
     position: absolute;
@@ -136,10 +145,11 @@ body.dark .nav-links li a:hover .link-name{
     transform: translateY(-50%);
     height: 15px;
     width: 15px;
-    background-color: var(--panel-color);
+    background-color: var(--background-general);
     border-radius: 50%;
     transition: var(--tran-03);
 }
+
 body.dark .switch:before{
     left: 20px;
 }
@@ -160,7 +170,7 @@ body.dark .switch:before{
     width: 35px;
     background-color: var(--background-icon-color);
     border-radius: 6px;
-    color: var(--title-icon-color);
+    color: var(--icon-color-title);
     display: flex;
     align-items: center;
     justify-content: center;

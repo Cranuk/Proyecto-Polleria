@@ -19,19 +19,16 @@
         @vite(['resources/css/app.css','resources/js/app.js',])
     </head>
     <body>
+        @include('includes.dashboard')
         <main>
-            @include('includes.dashboard')
-
             @yield('content-dashboard')
             @yield('content-sales')
             @yield('content-supplies')
             @yield('content-products')
             @yield('content-paymentmethod')
             @yield('content-offers')
-
-            @include('includes.filter')
         </main>
-
+        @include('includes.filter')
         @include('includes.alerts')
         @include('includes.footer')
     </body>

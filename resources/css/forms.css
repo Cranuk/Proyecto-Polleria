@@ -21,7 +21,7 @@
     font-size: 1.4rem;
     height: 50px;
     width: 400px;
-    color: #333333;
+    color: var(--text-color-input);
     text-align: center;
 }
 
