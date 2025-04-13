@@ -29,17 +29,21 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($tables as $data)
+                @foreach($tables as $methodPay)
                     <tr>
-                        <td>{{ $data->name }}</td>
-                        <td>{{ $data->description }}</td>
+                        <td>{{ $methodPay->name }}</td>
+                        <td>{{ $methodPay->description }}</td>
                         <td>
-                            <a href="{{ route('paymentMethods.edit', ['id'=>$data->id]) }}">
+                            <a href="{{ route('paymentMethods.edit', ['id'=>$methodPay->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>
                             </a>
-                            <a href="{{ route('paymentMethods.delete', ['id'=>$data->id]) }}" class="delete-button">
-                                <i class='bx bxs-trash-alt'></i>
-                            </a>
+                            <form action="{{ route('paymentMethods.delete', ['id'=>$methodPay->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-button" title="Eliminar medio de pago">
+                                    <i class='bx bxs-trash-alt'></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

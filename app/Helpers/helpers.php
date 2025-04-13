@@ -1,13 +1,12 @@
 <?php 
 namespace App\Helpers;
 
-use App\Models\Product;
 use App\Models\Sale;
 use App\Models\Supplie;
 use Carbon\Carbon;
 use NumberFormatter;
 
-class MyHelpers
+class Helpers
 {
     // TODO: aquí estarán los métodos que se usarán en toda la web, revisar igual si funciona como corresponde
 

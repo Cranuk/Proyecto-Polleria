@@ -21,31 +21,31 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::directive('productUnit', function ($expression) {
-            return "<?php echo e(\App\Helpers\MyHelpers::productUnit($expression)); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::productUnit($expression)); ?>";
         });
 
         Blade::directive('formatDate', function ($expression) {
-            return "<?php echo e(\App\Helpers\MyHelpers::formatDate($expression)); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::formatDate($expression)); ?>";
         });
 
         Blade::directive('formatCurrency', function ($expression) {
-            return "<?php echo e(\App\Helpers\MyHelpers::formatCurrency($expression)); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::formatCurrency($expression)); ?>";
         });
 
         Blade::directive('formatAmount', function ($expression) {
-            return "<?php echo e(\App\Helpers\MyHelpers::formatAmount($expression)); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::formatAmount($expression)); ?>";
         });
 
         Blade::directive('getBalancePositive', function($expression) {
-            return "<?php echo e(\App\Helpers\MyHelpers::getBalancePositive($expression)); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::getBalancePositive($expression)); ?>";
         });
 
         Blade::directive('getBalanceNegative', function() {
-            return "<?php echo e(\App\Helpers\MyHelpers::getBalanceNegative()); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::getBalanceNegative()); ?>";
         });
 
         Blade::directive('getBalance', function() {
-            return "<?php echo e(\App\Helpers\MyHelpers::getBalance()); ?>";
+            return "<?php echo e(\App\Helpers\Helpers::getBalance()); ?>";
         });
     }
 }

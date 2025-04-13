@@ -24,35 +24,35 @@ Route::get('/paymentMethod', [PanelController::class, 'paymentMethod'])->name('p
 // ANCHOR: rutas para metodos de pago
 Route::get('/paymentMethod/create', [PaymentMethodController::class, 'create'])->name('paymentMethods.create');
 Route::get('/paymentMethod/edit/{id}', [PaymentMethodController::class, 'edit'])->name('paymentMethods.edit');
-Route::get('/paymentMethod/delete/{id}', [PaymentMethodController::class, 'delete'])->name('paymentMethods.delete');
+Route::delete('/paymentMethod/delete/{id}', [PaymentMethodController::class, 'delete'])->name('paymentMethods.delete');
 Route::post('/paymentMethod/save', [PaymentMethodController::class, 'save'])->name('paymentMethods.save');
 Route::post('/paymentMethod/update', [PaymentMethodController::class, 'update'])->name('paymentMethods.update');
 
 // ANCHOR: rutas para los productos
 Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
 Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
-Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('products.delete');
+Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('products.delete');
 Route::post('/product/save', [ProductController::class, 'save'])->name('products.save');
 Route::post('/product/update', [ProductController::class, 'update'])->name('products.update');
 
 // ANCHOR: rutas para insumos
 Route::get('/supplie/create', [SupplieController::class, 'create'])->name('supplies.create');
 Route::get('/supplie/edit/{id}', [SupplieController::class, 'edit'])->name('supplies.edit');
-Route::get('/supplie/delete/{id}', [SupplieController::class, 'delete'])->name('supplies.delete');
+Route::delete('/supplie/delete/{id}', [SupplieController::class, 'delete'])->name('supplies.delete');
 Route::post('/supplie/save', [SupplieController::class, 'save'])->name('supplies.save');
 Route::post('/supplie/update', [SupplieController::class, 'update'])->name('supplies.update');
 
 // ANCHOR: rutas para ventas
 Route::get('/sale/create', [SaleController::class, 'create'])->name('sales.create');
 Route::get('/sale/edit/{id}', [SaleController::class, 'edit'])->name('sales.edit');
-Route::get('/sale/delete/{id}', [SaleController::class, 'delete'])->name('sales.delete');
+Route::delete('/sale/delete/{id}', [SaleController::class, 'delete'])->name('sales.delete');
 Route::post('/sale/save', [SaleController::class, 'save'])->name('sales.save');
 Route::post('/sale/update', [SaleController::class, 'update'])->name('sales.update');
 
 // ANCHOR: rutas para ofertas
 Route::get('/offer/create', [OfferController::class, 'create'])->name('offers.create');
 Route::get('/offer/edit/{id}', [OfferController::class, 'edit'])->name('offers.edit');
-Route::get('/offer/delete/{id}', [OfferController::class, 'delete'])->name('offers.delete');
+Route::delete('/offer/delete/{id}', [OfferController::class, 'delete'])->name('offers.delete');
 Route::post('/offer/save', [OfferController::class, 'save'])->name('offers.save');
 Route::post('/offer/update', [OfferController::class, 'update'])->name('offers.update');
 

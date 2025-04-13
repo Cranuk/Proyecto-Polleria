@@ -55,9 +55,13 @@
                         <td>{{ $sale->paymentMethod->name }}</td>
                         <td>@formatDate($sale->created_at)</td>
                         <td>
-                            <a href="{{ route('sales.delete', ['id'=>$sale->id]) }}" class="delete-button">
-                                <i class='bx bxs-trash-alt'></i>
-                            </a>
+                            <form action="{{ route('sales.delete', ['id'=>$sale->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-button" title="Eliminar medio de pago">
+                                    <i class='bx bxs-trash-alt'></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

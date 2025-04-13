@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    const url = "http://laravel-polleria/";
+    const url = "http://polleria.test:8000";
 
     function modalAction(table, action){
         $('#table').val(table);

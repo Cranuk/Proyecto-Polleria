@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\FilterService;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class FilterController{

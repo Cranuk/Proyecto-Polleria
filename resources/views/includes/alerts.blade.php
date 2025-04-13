@@ -17,7 +17,7 @@
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = button.href; // NOTE: Si el usuario confirma, realiza la eliminación
+                        button.closest('form').submit(); // NOTE: Si el usuario confirma, realiza la eliminación
                     }
                 });
             });

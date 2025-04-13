@@ -42,9 +42,13 @@
                             <a href="{{ route('supplies.edit', ['id'=>$supplie->id]) }}">
                                 <i class='bx bxs-edit-alt'></i>
                             </a>
-                            <a href="{{ route('supplies.delete', ['id'=>$supplie->id]) }}" class="delete-button">
-                                <i class='bx bxs-trash-alt'></i>
-                            </a>
+                            <form action="{{ route('supplies.delete', ['id'=>$supplie->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-button" title="Eliminar medio de pago">
+                                    <i class='bx bxs-trash-alt'></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
