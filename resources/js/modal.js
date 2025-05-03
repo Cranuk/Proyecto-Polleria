@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    const url = "http://polleria.test:8000";
+    const url = import.meta.env.VITE_APP_URL;
 
     function modalAction(table, action){
         $('#table').val(table);
