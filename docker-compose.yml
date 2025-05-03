@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
     networks:
-      - laravel
+      - StoreOnline
 
   server:
     image: nginx:latest
@@ -26,7 +26,7 @@ services:
     depends_on:
       - app
     networks:
-      - laravel
+      - StoreOnline
 
   db:
     image: mysql:8
@@ -36,16 +36,16 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD_ROOT}
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
     networks:
-      - laravel
+      - StoreOnline
 
 volumes:
   dbdata:
 
 networks:
-  laravel:
+  StoreOnline:

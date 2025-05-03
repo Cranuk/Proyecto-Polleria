@@ -44,7 +44,7 @@ class SaleController
         if (self::removeAmountProduct($productId, $amount)) {
             $sale = new Sale();
             $sale->product_id = $productId;
-            $sale->offer_id = 0;
+            $sale->offer_id = null;
             $sale->payment_id = $paymentId;
             $sale->amount = $amount;
             $sale->product_price = $product->price;
@@ -63,7 +63,7 @@ class SaleController
         $offerProduct = Offer::findOrFail($offerId);
         if (self::removeAmountProduct($offerProduct->product_id, $offerProduct->amount_discount)) {
             $sale = new Sale();
-            $sale->product_id = 0;
+            $sale->product_id = null;
             $sale->offer_id = $offerId;
             $sale->payment_id = $paymentId;
             $sale->amount = $offerProduct->amount_discount;
