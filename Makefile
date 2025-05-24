@@ -16,28 +16,28 @@ restart:
 
 # Accesos rápidos a contenedores
 bash:
-	docker exec -it app bash
+	docker exec -it app-store bash
 
 nginx:
-	docker exec -it nginx sh
+	docker exec -it server-store sh
 
 mysql:
-	docker exec -it mysql mysql -u$(DB_USERNAME) -p$(DB_PASSWORD) $(DB_DATABASE)
+	docker exec -it db-store mysql -u$(DB_USERNAME) -p$(DB_PASSWORD) $(DB_DATABASE)
 
 mysql-root:
-	docker exec -it mysql mysql -uroot -p$(DB_ROOT_PASSWORD)
+	docker exec -it db-store mysql -uroot -p$(DB_ROOT_PASSWORD)
 
 # Artisan: php artisan <comando>
 artisan:
-	docker exec -it app php artisan $(cmd)
+	docker exec -it app-store php artisan $(cmd)
 
 # Composer: composer <comando>
 composer:
-	docker exec -it app composer $(cmd)
+	docker exec -it app-store composer $(cmd)
 
 # NPM: npm <comando>
 npm:
-	docker exec -it app npm $(cmd)
+	docker exec -it app-store npm $(cmd)
 
 # Horizon
 horizon:
