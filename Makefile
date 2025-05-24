@@ -45,5 +45,5 @@ horizon:
 
 # Utilidades
 status:
-	docker ps --filter "name=Proyecto-Polleria" --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}"
+	docker ps --filter "name=store" --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}"
 

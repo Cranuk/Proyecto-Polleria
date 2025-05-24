@@ -4,11 +4,11 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     server: {
         host: '0.0.0.0', // Permite acceder desde fuera del contenedor
-        port: 5173,
+        port: 5174,
         hmr: {
-            host: '172.20.80.1',
+            host: 'host.docker.internal',
             protocol: 'ws',
-            port: 5173,
+            port: 5174,
         },
     },
     plugins: [
